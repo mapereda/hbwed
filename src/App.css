@@ -1,0 +1,222 @@
+@font-face {
+    font-family: 'HighSpirited';
+    src: url('/fonts/High Spirited.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Fondo “papel” – usa tu propia textura: /assets/paper-texture.jpg */
+.paper {
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+  background-image: url("/assets/WallpaperTexture.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Portada */
+.portada {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;  
+}
+
+.Logo {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;  
+}
+
+.TitlePortada {
+  font-family: "High Spirited", serif;
+  font-size: 4rem;
+  margin: 1rem;
+  margin-top: 4rem;
+  color: var(--ion-color-dark);
+}
+
+/* Menú portada: listado vertical */
+.menu-portada {
+  display: grid;
+  align-self: flex-end;
+  gap: 8px;
+  width: 160px;
+  margin: 8px auto 18px;
+}
+
+.link-menu {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--ion-color-primary);
+  text-transform: uppercase;
+  padding: .4rem 0;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+/* Secciones */
+.seccion {
+  min-height: 80%;
+  padding: 2rem 1rem;
+}
+
+.TitleSection {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--ion-color-dark);
+  font-size: 1.4rem;
+  text-align: center;
+  margin: .8rem;
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  padding: 1rem;
+  box-shadow: none;
+}
+
+.form .ItemForm {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.form .ItemForm .LabelForm {
+  font-size: .9rem;
+  color: var(--ion-color-dark);
+  font-weight: 600;
+}
+
+.form .ItemForm ion-input input {
+  width: 100%;
+  margin-top: .6rem;
+  height: 2.8rem;
+  border: 1px solid var(--ion-color-light);
+  border-radius: 6px;
+}
+
+.form .ItemForm ion-textarea textarea {
+  width: 100%;
+  margin-top: .6rem;
+  height: 10rem;
+  border: 1px solid var(--ion-color-light);
+  border-radius: 6px;
+}
+
+/* Botón confirmar verde suave */
+.btn-confirmar {
+  background: var(--ion-color-secondary);
+  --background-activated: var(--ion-color-secondary-shade);
+  --background-focused: var(--ion-color-secondary-shade);
+  margin-top: 24px;
+  border-radius: 12px;
+}
+
+/* Timeline Día B (estilo tallo con hojitas) */
+.timeline {
+  position: relative;
+  margin-top: 8px;
+  padding-left: 22px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--ion-color-secondary);
+  border-radius: 2px;
+}
+.t-item {
+  position: relative;
+  padding: 10px 0 10px 0;
+}
+.t-dot {
+  position: absolute;
+  left: 6px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
+  background: var(--ion-color-secondary);
+  border-radius: 50%;
+}
+.t-text {
+  font-size: 14px;
+  color: var(--ion-color-dark);
+}
+
+/* Transporte */
+.sub {
+  font-weight: 700;
+  color: var(--ion-color-dark);
+  margin: 6px 0;
+}
+.texto {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ion-color-dark);
+}
+.mapa-placeholder {
+  height: 50vh;
+  border-radius: 12px;
+  background: var(--ion-color-light);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* Hoteles */
+.lista-hoteles {
+  display: grid;
+  gap: 10px;
+}
+.hotel .sub {
+  margin-top: 0;
+}
+
+/* Regalo */
+.iban {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(var(--ion-color-secondary-rgb), .2);
+  margin: 8px 0 12px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.cuentas {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+
+/* Gracias */
+.seccion-gracias .peque {
+  font-size: 12px;
+  color: var(--ion-color-dark);
+}
+
+/* FAB “arriba” */
+.fab {
+  --background: var(--ion-color-secondary);
+  --background-activated: var(--ion-color-secondary-shade);
+  --border-radius: 50%;
+}
