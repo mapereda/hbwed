@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { IonInput, IonButton, IonItem, IonLabel, IonTextarea } from "@ionic/react";
+import { IonInput, IonButton, IonItem, IonLabel, IonTextarea, IonSelect, IonSelectOption } from "@ionic/react";
 import emailjs from "emailjs-com";
+import "./confirmForm.css";
 
 const ConfirmForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,13 @@ const ConfirmForm: React.FC = () => {
     bus: "",
     alergies: ""
   });
+
+  const busOptions = [
+    { value: "madrid", label: "Moncloa, Madrid" },
+    { value: "valdenuno", label: "Valdenuño Fernández" },
+    { value: "el-casar", label: "El Casar" },
+    { value: "no-necesito-bus", label: "No necesito autobús" }
+  ];
 
   const handleChange = (e: any) => {
     setFormData({
@@ -39,10 +47,9 @@ const ConfirmForm: React.FC = () => {
   };
 
   return (
-        <form onSubmit={sendEmail} className="form">
+        <form onSubmit={sendEmail} className="ConfirmForm">
           <IonItem className="ItemForm">
-            <IonLabel className="LabelForm" position="stacked">Nombre y Apellidos</IonLabel>
-            <IonInput className="InputForm" placeholder="Ej: Elena García Faucha" 
+            <IonInput label="Nombre y Apellidos" labelPlacement="stacked" className="InputForm" placeholder="Introduce tu nombre completo" 
               name="name"
               value={formData.name}
               onIonChange={handleChange}
@@ -50,24 +57,31 @@ const ConfirmForm: React.FC = () => {
           </IonItem>
 
           <IonItem className="ItemForm">
-            <IonLabel className="LabelForm" position="stacked">Autobús</IonLabel>
-            <IonInput placeholder="Ej: Autobús Madrid"
-              name="bus"
-              value={formData.bus}
-              onIonChange={handleChange}
-            />
+            <IonSelect label="Transporte" labelPlacement="stacked" placeholder="Selecciona tu opción de transporte" value={formData.bus} onIonChange={((e) => setFormData(prev => ({
+                ...prev,
+                bus: e.detail.value
+              })))}>
+              {busOptions.map((option) => (
+                <IonSelectOption key={option.value} value={option.value}>{option.label}</IonSelectOption>
+              ))}
+            </IonSelect>
           </IonItem>
 
           <IonItem className="ItemForm">
-            <IonLabel className="LabelForm" position="stacked">Alergias/Intolerancias</IonLabel>
-            <IonTextarea className="TextareaForm" autoGrow rows={3} placeholder="Dinos tus alergios o intolerancias"
+            <IonTextarea 
+              label="Alergias/Intolerancias" 
+              labelPlacement="stacked" 
+              className="TextareaForm" 
+              autoGrow 
+              rows={3} 
+              placeholder="Si tienes alguna alergia o intolerancia, especifícala aquí..."
               name="alergies"
               value={formData.alergies}
               onIonChange={handleChange}
             ></IonTextarea>
           </IonItem>
 
-          <IonButton expand="block" type="submit" className="ion-margin-top">
+          <IonButton color={"secondary"} expand="block" type="submit" className="ConfirmButton">
             Confirmar
           </IonButton>
         </form>
