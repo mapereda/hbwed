@@ -3,12 +3,7 @@ import {
   IonApp,
   IonPage,
   IonContent,
-  IonButton,
   IonIcon,
-  IonItem,
-  IonLabel,
-  IonInput,
-  IonTextarea,
   IonFab,
   IonFabButton,
 } from "@ionic/react";
@@ -44,6 +39,7 @@ import '@ionic/react/css/palettes/dark.system.css';
 /* Theme variables */
 import './theme/variables.css';
 import "./App.css";
+import ConfirmForm from "./components/ConfirmForm/ConfirmForm";
 
 const SECTIONS = [
   { id: "confirmacion", label: "Confirmación" },
@@ -122,32 +118,8 @@ const App: React.FC = () => {
           {/* SECCIÓN: CONFIRMACIÓN */}
           <section id="confirmacion" className="seccion">
             <h2 className="TitleSection">CONFIRMACIÓN</h2>
-
-            <div className="form">
-              <div className="ItemForm">
-                <IonLabel className="LabelForm" position="stacked">Nombre</IonLabel>
-                <IonInput className="InputForm" placeholder="Escribe tu nombre" />
-              </div>
-
-              <div className="ItemForm">
-                <IonLabel className="LabelForm" position="stacked">Apellidos</IonLabel>
-                <IonInput className="InputForm" placeholder="Escribe tus apellidos" />
-              </div>
-
-              <div className="ItemForm">
-                <IonLabel className="LabelForm" position="stacked">Asistencia</IonLabel>
-                <IonInput className="InputForm" placeholder="Ej. Sí, veréis +1" />
-              </div>
-
-              <div className="ItemForm">
-                <IonLabel className="LabelForm" position="stacked">Alergias / intolerancias</IonLabel>
-                <IonTextarea className="TextareaForm" autoGrow rows={3} placeholder="Opcional" />
-              </div>
-
-              <IonButton color="primary" fill="solid" expand="block" className="btn-confirmar">
-                Confirmar
-              </IonButton>
-            </div>
+            <p className="InfoText">Por favor, envía una confirmación por persona.</p>
+            <ConfirmForm></ConfirmForm>
           </section>
 
           {/* SECCIÓN: DÍA B */}
