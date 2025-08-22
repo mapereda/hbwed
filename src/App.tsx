@@ -40,6 +40,7 @@ import '@ionic/react/css/palettes/dark.system.css';
 import './theme/variables.css';
 import "./App.css";
 import ConfirmForm from "./components/ConfirmForm/ConfirmForm";
+import Timeline from "./components/Timeline/Timeline";
 
 const SECTIONS = [
   { id: "confirmacion", label: "Confirmación" },
@@ -123,7 +124,7 @@ const App: React.FC = () => {
           </section>
 
           {/* SECCIÓN: DÍA B */}
-          <section id="diab" className="seccion">
+          {/* <section id="diab" className="seccion">
             <h2 className="TitleSection">DÍA "B"</h2>
             <div className="timeline">
               <div className="t-item">
@@ -145,10 +146,14 @@ const App: React.FC = () => {
                 <div className="t-text">20:00 — Fiesta</div>
               </div>
             </div>
+          </section> */}
+          <section id="diab" className="seccion">
+            <h2 className="TitleSection">DÍA "B"</h2>
+            <Timeline/>
           </section>
 
           {/* SECCIÓN: TRANSPORTE */}
-          <section id="transporte" className="seccion">
+          <section id="transporte" className="seccion DiaBSeccion">
             <h2 className="TitleSection">TRANSPORTE</h2>
             <p className="texto">
               Habrá autobuses desde Madrid, Valdenuño Fernández y El Casar. Indícanos en la confirmación si

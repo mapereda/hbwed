@@ -1,0 +1,109 @@
+.timeline-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: transparent;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin: 1.6rem 0;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.TimelineDot {
+    width: 3.3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding: .4rem;
+  background-color: white;
+  border: 2px solid var(--ion-color-secondary);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.TimelineDot ion-icon {
+    width: 2.3rem;
+    height: 2.3rem;
+  color: var(--ion-color-secondary);
+  fill: var(--ion-color-secondary);
+}
+
+.timeline-content {
+  margin-left: 20px;
+  background: #fff;
+  padding: .4rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.timeline-content h3 {
+  font-size: 1rem;
+  color: #335d2d;
+}
+
+.timeline-content p {
+  color: #333;
+  font-size: .9rem;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  background-color: #e1f7e1;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  background-color: #f0f9f0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 2px;
+  height: 100%;
+  background: rgba(var(--ion-color-secondary-rgb), .7);
+  transform: translateX(-50%);
+  border-radius: 2px;
+  background-image: url('path_to_your_watercolor_line_image.png'); /* Puedes agregar una imagen de línea de acuarela aquí */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  animation: lineAnimation 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lineAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
