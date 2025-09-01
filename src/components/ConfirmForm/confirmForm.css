@@ -10,6 +10,7 @@
   width: 100%;
   height: auto;
   margin: 2rem 0;
+  border-radius: 12px;
 }
 
 /* .ConfirmForm .ItemForm .LabelForm {
@@ -24,10 +25,13 @@
   height: 2.8rem;
 }
 
-.ConfirmForm .ItemForm ion-textarea textarea {
-  width: 100%;
-  margin-top: .6rem;
-  height: 10rem;
+.ConfirmForm .InfoText {
+  margin-top: 0;
+  margin-bottom: .2rem;
+  text-align: left;
+}
+.ConfirmForm .RadioGroup ion-item{
+  --background: transparent;
 }
 
 /* Botón confirmar verde suave */

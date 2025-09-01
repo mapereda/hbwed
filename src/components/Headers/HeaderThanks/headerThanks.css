@@ -1,0 +1,27 @@
+.HeaderThanks {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeaderThanks .CitaText {
+    grid-column: 1/2;
+    padding: .4rem 0;
+    padding-right: 1rem;
+    font-size: 2rem;
+    font-family: "High Spirited";
+    text-align: center;        
+}
+
+.HeaderThanks .CitaImg {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    width: 100%;
+    height: 24vh;
+    background-color: white;
+}

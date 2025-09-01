@@ -5,7 +5,7 @@ import {
   IonContent,
   IonIcon,
   IonFab,
-  IonFabButton,
+  IonFabButton
 } from "@ionic/react";
 import { arrowUp } from "ionicons/icons";
 
@@ -40,13 +40,19 @@ import '@ionic/react/css/palettes/dark.system.css';
 import './theme/variables.css';
 import "./App.css";
 import ConfirmForm from "./components/ConfirmForm/ConfirmForm";
-import Timeline from "./components/Timeline/Timeline";
+import HeaderCita from "./components/Headers/HeaderCita/HeaderCita";
+import Transporte from "./components/Transporte/Transporte";
+import HotelButton from "./components/HotelButton/HotelButton";
+import Gift from "./components/Gift/Gift";
+import HeaderThanks from "./components/Headers/HeaderThanks/HeaderThanks";
 
 const SECTIONS = [
-  { id: "confirmacion", label: "Confirmación" },
-  { id: "diab", label: 'Día "B"' },
+  {id: "cita", label: "Cita"},
+  {id: "celebración", label: "Celebración y Ceremonia"},
+  { id: "programa", label: 'Programa del día' },
   { id: "transporte", label: "Transporte" },
   { id: "alojamiento", label: "Alojamiento" },
+  { id: "confirmacion", label: "Confirmación" },
   { id: "regalo", label: "Regalo" },
   { id: "gracias", label: "Gracias" },
 ];
@@ -102,8 +108,10 @@ const App: React.FC = () => {
               className="Logo"
               loading="lazy"
             />
+            <p>7.DICIEMBRE.2025</p>
+            <p>Finca El Campillo</p>
 
-            <nav className="menu-portada">
+            {/*<nav className="menu-portada">
               {SECTIONS.map((s) => (
                 <button
                   key={s.id}
@@ -113,125 +121,63 @@ const App: React.FC = () => {
                   {s.label}
                 </button>
               ))}
-            </nav>
+            </nav>*/}
           </section>
 
-          {/* SECCIÓN: CONFIRMACIÓN */}
-          <section id="confirmacion" className="seccion">
-            <h2 className="TitleSection">CONFIRMACIÓN</h2>
-            <p className="InfoText">Por favor, envía una confirmación por persona.</p>
-            <ConfirmForm></ConfirmForm>
+          {/* SECCIÓN: HEADER CITA */}
+          <section id="cita" className="Header">
+            <HeaderCita/>
           </section>
 
-          {/* SECCIÓN: DÍA B */}
-          {/* <section id="diab" className="seccion">
-            <h2 className="TitleSection">DÍA "B"</h2>
-            <div className="timeline">
-              <div className="t-item">
-                <div className="t-dot" />
-                <div className="t-text">
-                  12:00 — Ceremonia (Iglesia / lugar)
-                </div>
-              </div>
-              <div className="t-item">
-                <div className="t-dot" />
-                <div className="t-text">14:00 — Cóctel</div>
-              </div>
-              <div className="t-item">
-                <div className="t-dot" />
-                <div className="t-text">15:00 — Banquete</div>
-              </div>
-              <div className="t-item">
-                <div className="t-dot" />
-                <div className="t-text">20:00 — Fiesta</div>
-              </div>
-            </div>
-          </section> */}
-          <section id="diab" className="seccion">
-            <h2 className="TitleSection">DÍA "B"</h2>
-            <Timeline/>
-          </section>
-
-          {/* SECCIÓN: TRANSPORTE */}
-          <section id="transporte" className="seccion DiaBSeccion">
-            <h2 className="TitleSection">TRANSPORTE</h2>
-            <p className="texto">
-              Habrá autobuses desde Madrid, Valdenuño Fernández y El Casar. Indícanos en la confirmación si
-              quieres plaza para contar contigo.
-            </p>
+          {/* SECCIÓN: CELEBRACION Y CEREMONIA */}
+          <section id="celebracion" className="seccion CelebracionCeremoniaSection">
+            <h2 className="TitleSection">CELEBRACIÓN Y CEREMONIA</h2>
+            <span className="texto">
+              La ceremonia tendrá lugar el domingo siete de diciembre de dos mil veinticinco, en la finca El Campillo, a la una de la tarde.
+            </span>
+            <span className="texto">La recepción de invitados comenzará a las doce y media.</span>
 
             <div className="card">
-              <h3 className="sub">Autobús</h3>
-              <h5>Ida</h5>
-              <p className="texto">
-                10:30 — <em>Valdenuño Fernández, con parada en El Casar a las 10:40.</em>
-                <br />
-                11:00 — <em>Moncloa, Madrid.</em>
-                <br />
-              </p>
-
-              <h5>Regreso</h5>
-              <p className="texto">
-                23:00 — <em>Regreso a Madrid, El Casar y Valdenuño Fernández.</em>
-                <br />
-              </p>
-
-              <h3 className="sub">Dirección</h3>
-              <p className="texto">Finca El Ccampillo, El Escorial</p>
-              {/* Puedes incrustar un mapa estático si quieres */}
+              <p className="texto">Dirección: Finca El Campillo, 1.8, M-600, 28200 San Lorenzo de El Escorial, Madrid</p>
               <div className="mapa-placeholder">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.9762178677506!2d-4.095837124461307!3d40.6304064426075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd410c8288c26bc7%3A0x865d3b0dd729ba6f!2sFinca%20El%20Campillo!5e0!3m2!1ses!2ses!4v1755679547065!5m2!1ses!2ses" width="100%" height="100%" style={{border: "0",}} loading="lazy" ></iframe>
               </div>
             </div>
           </section>
 
+          {/* SECCIÓN: PROGRAMA DE DIA - TIMELINE */}
+          <section id="programa" className="Header">
+            <p>imagen timeline</p>
+          </section>
+
+          {/* SECCIÓN: TRANSPORTE */}
+          <section id="transporte" className="seccion">
+            <h2 className="TitleSection">TRANSPORTE</h2>
+            <Transporte/>
+          </section>
+
           {/* SECCIÓN: ALOJAMIENTO */}
           <section id="alojamiento" className="seccion">
             <h2 className="TitleSection">ALOJAMIENTO</h2>
-            <div className="lista-hoteles">
-              {["Hotel 1", "Hotel 2", "Hotel 3", "Hotel 4"].map((h) => (
-                <div className="hotel card" key={h}>
-                  <h3 className="sub">{h}</h3>
-                  <p className="texto">
-                    Dirección del hotel, distancia a la finca y
-                    teléfono de contacto.
-                  </p>
-                </div>
-              ))}
-            </div>
+            <p>Si quieres alojarte en El Escorial, te dejamos estas sugerencias.</p>
+            <HotelButton/>
+          </section>
+
+          {/* SECCIÓN: CONFIRMACIÓN */}
+          <section id="confirmacion" className="seccion ConfirmSection">
+            <h2 className="TitleSection">CONFIRMACIÓN</h2>
+            <ConfirmForm></ConfirmForm>
           </section>
 
           {/* SECCIÓN: REGALO */}
           <section id="regalo" className="seccion">
             <h2 className="TitleSection">REGALO</h2>
-            <div className="card">
-              <p className="texto">
-                Si queréis tener un detalle, os dejamos nuestro número de
-                cuenta. ¡Gracias!
-              </p>
-              <div className="iban">ESXX XXXX XXXX XXXX XXXX XXXX</div>
-              <div className="cuentas">
-                <div>
-                  <strong>Daniel</strong>
-                  <br />
-                  6XX XX XX XX
-                </div>
-                <div>
-                  <strong>Elena</strong>
-                  <br />
-                  6XX XX XX XX
-                </div>
-              </div>
-            </div>
+            <Gift/>
           </section>
 
           {/* SECCIÓN: GRACIAS */}
-          <section id="gracias" className="seccion seccion-gracias">
-            <h2 className="TitleSection">GRACIAS</h2>
-            <p className="texto peque">
-              Gracias por acompañarnos. Nos hace mucha ilusión compartir este
-              día con vosotros.
-            </p>
+          <section id="gracias" className="Header">
+            <HeaderThanks/>
           </section>
 
           {/* BOTÓN FLOTANTE ARRIBA */}
