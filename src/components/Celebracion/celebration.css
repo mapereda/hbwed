@@ -1,0 +1,13 @@
+.mapa-placeholder {
+  height: 48vh;
+  border-radius: 12px;
+  background: var(--ion-color-light);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.mapa-placeholder iframe {
+    border-radius: 12px;
+}

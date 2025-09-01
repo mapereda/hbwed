@@ -1,9 +1,24 @@
 @font-face {
-    font-family: 'HighSpirited';
-    src: url('/fonts/High Spirited.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'HighSpirited';
+  src: url('/fonts/High Spirited.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'Watercolor';
+  src: url('/fonts/Watercolor.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cormorant';
+  src: url('/fonts/CormorantGaramond.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 /* Fondo “papel” – usa tu propia textura: /assets/paper-texture.jpg */
 .paper {
@@ -11,6 +26,9 @@
   --padding-end: 0;
   --padding-top: 0;
   --padding-bottom: 0;
+  --background: url(/public/assets/fondoTextura.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Portada */
@@ -77,41 +95,34 @@
   width: 100%;
   height: auto;
   padding: 2rem 1rem;
-  background-image: url("../public/assets/fondoTextura.jpg");
-  background-size: cover;
-  background-attachment: fixed;
+  background: transparent;
 }
 
 .TitleSection {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Cormorant";
   color: var(--ion-color-dark);
   font-size: 1.4rem;
   text-align: center;
   margin: .8rem;
 }
 
+.texto, p, span {
+  font-family: "Cormorant";
+  font-size: 1rem;
+  color: var(--ion-color-dark);  
+}
+
 .InfoText {
   margin: 0 auto;
-  margin-top: 1rem;
   color: var(--ion-color-medium-shade);
+  font-family: "Cormorant";
   text-align: center;
   font-size: .9rem;
 }
 
-/* Transporte */
-.texto {
-  font-size: 14px;
-  line-height: 1.45;
+h3, h5, ion-button {
+  font-family: "Cormorant";
   color: var(--ion-color-dark);
-}
-.mapa-placeholder {
-  height: 50vh;
-  border-radius: 12px;
-  background: var(--ion-color-light);
-  display: grid;
-  place-items: center;
-  font-weight: 600;
-  margin-top: 8px;
 }
 
 /* FAB “arriba” */
@@ -119,7 +130,9 @@
   --background: var(--ion-color-secondary);
   --background-activated: var(--ion-color-secondary-shade);
   --border-radius: 50%;
+  font-family: "Cormorant";
 }
+
 
 .ConfirmSection {
   background: var(--ion-color-secondary);

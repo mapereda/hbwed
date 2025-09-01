@@ -1,4 +1,5 @@
 import { IonButton } from '@ionic/react';
+import "./hotelButton.css";
 
 const HotelButton: React.FC = () => {
   const handleOpenPdf = () => {
@@ -7,7 +8,7 @@ const HotelButton: React.FC = () => {
   };
 
   return (
-    <IonButton onClick={handleOpenPdf} expand="block" color="secondary">
+    <IonButton className='HotelButton' onClick={handleOpenPdf} expand="block" color="secondary">
       Ver alojamientos
     </IonButton>
   );
