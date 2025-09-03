@@ -2,11 +2,15 @@ import "./gift.css";
 
 const Gift: React.FC = () => {
   return (
-    <div className="card Gift">
+    <div className="Gift">
       <p className="texto">
         El mejor regalo es que nos acompañéis en este día tan importante para nosotros, pero si queréis tener un detalle os dejamos el siguiente número de cuenta:
       </p>
-      <div className="BankAccount">ESXX XXXX XXXX XXXX XXXX XXXX</div>
+      <div className="BankContent">
+        <span className="Label">Cuenta bancaria</span>
+        <div className="BankAccount">ESXX XXXX XXXX XXXX XXXX XXXX</div>
+      </div>
+      
       <div className="PhonesContent">
         <div className="Phone">
           <span className="PhoneName">Daniel</span>

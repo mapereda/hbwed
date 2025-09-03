@@ -32,16 +32,21 @@
 }
 
 /* Portada */
-.portada {
+.CoverSection {
   height: 100vh;
   display: flex;
   text-align: center;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;  
+  justify-content: flex-end;
+  padding: 2rem 1rem;  
+  padding-bottom: 5rem;
   background-image: url("../public/assets/fondoTextura.jpg");
   background-size: cover;
   background-attachment: fixed;
+}
+
+.CoverSection p {
+  margin: 1rem 0;
 }
 
 .Logo {
@@ -49,6 +54,7 @@
   height: auto;
   display: block;
   margin: 0 auto;  
+  margin-bottom: .6rem;
 }
 
 .TitlePortada {
@@ -83,7 +89,7 @@
 }
 
 /* Cabeceras - Headers */
-.Header {
+.HeaderSection {
   width: 100%;
   height: auto;
   padding: 2rem 1rem;
@@ -91,25 +97,33 @@
 }
 
 /* Secciones */
-.seccion {
+.Section {
   width: 100%;
-  height: auto;
-  padding: 2rem 1rem;
-  background: transparent;
+  height: 100%;
+  padding: 2rem 1.4rem;
+  padding-bottom: 3rem;
+  background: transparent;  
 }
 
 .TitleSection {
+  margin: .8rem 0;
   font-family: "Cormorant";
   color: var(--ion-color-dark);
   font-size: 1.4rem;
   text-align: center;
-  margin: .8rem;
+  font-weight: 500;
 }
 
 .texto, p, span {
+  margin: .2rem;
   font-family: "Cormorant";
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--ion-color-dark);  
+}
+
+.Label {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .InfoText {
@@ -125,6 +139,12 @@ h3, h5, ion-button {
   color: var(--ion-color-dark);
 }
 
+h5 {
+  margin-top: 1.4rem;
+  margin-bottom: .2rem;
+  font-weight: 600;
+}
+
 /* FAB “arriba” */
 .fab {
   --background: var(--ion-color-secondary);
@@ -133,7 +153,15 @@ h3, h5, ion-button {
   font-family: "Cormorant";
 }
 
-
 .ConfirmSection {
   background: var(--ion-color-secondary);
+}
+
+.HeaderThanksSection {
+  padding: 0;
+  background-color: var(--ion-color-secondary-shade);
+}
+
+.AccommodationSection {
+  border-top: 1px solid var(--ion-color-secondary);
 }

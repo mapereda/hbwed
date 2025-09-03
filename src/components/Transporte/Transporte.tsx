@@ -9,7 +9,7 @@ const Transporte = () => {
             Habrá autobuses desde Madrid, Valdenuño Fernández y El Casar. Indícanos en la confirmación si quieres plaza para contar contigo.
         </p>
 
-        <div className="card">
+        <div>
             <h5>IDA</h5>
             <p className="texto">
                 10:30h Valdenuño Fernández.

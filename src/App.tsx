@@ -46,6 +46,8 @@ import HotelButton from "./components/HotelButton/HotelButton";
 import Gift from "./components/Gift/Gift";
 import HeaderThanks from "./components/Headers/HeaderThanks/HeaderThanks";
 import Celebration from "./components/Celebracion/Celebration";
+import Timeline from "./components/Timeline/Timeline";
+import Accomodation from "./components/Accomodation/Accomodation";
 
 const SECTIONS = [
   {id: "cita", label: "Cita"},
@@ -101,7 +103,7 @@ const App: React.FC = () => {
           onIonScroll={onScroll}
         >
           {/* PORTADA */}
-          <section className="portada" id="top">
+          <section className="CoverSection" id="top">
             <h1 className="TitlePortada">Elena y Daniel</h1>
             <img
               src="/assets/logo.png"
@@ -125,48 +127,47 @@ const App: React.FC = () => {
           </section>
 
           {/* SECCIÓN: HEADER CITA */}
-          <section id="cita" className="Header">
+          <section id="cita" className="HeaderSection HeaderCitaSection">
             <HeaderCita/>
           </section>
 
           {/* SECCIÓN: CELEBRACION Y CEREMONIA */}
-          <section id="celebracion" className="seccion CelebracionCeremoniaSection">
+          <section id="celebracion" className="Section CelebrationSection">
             <h2 className="TitleSection">CELEBRACIÓN Y CEREMONIA</h2>
             <Celebration/>
           </section>
 
           {/* SECCIÓN: PROGRAMA DE DIA - TIMELINE */}
-          <section id="programa" className="Header">
-            <p>imagen timeline</p>
+          <section id="programa" className="HeaderSection TimelineSection">
+            <Timeline/>
           </section>
 
           {/* SECCIÓN: TRANSPORTE */}
-          <section id="transporte" className="seccion">
+          <section id="transporte" className="Section TransporteSection">
             <h2 className="TitleSection">TRANSPORTE</h2>
             <Transporte/>
           </section>
 
           {/* SECCIÓN: ALOJAMIENTO */}
-          <section id="alojamiento" className="seccion">
+          <section id="alojamiento" className="Section AccommodationSection">
             <h2 className="TitleSection">ALOJAMIENTO</h2>
-            <p>Si quieres alojarte en El Escorial, te dejamos estas sugerencias.</p>
-            <HotelButton/>
+            <Accomodation/>
           </section>
 
           {/* SECCIÓN: CONFIRMACIÓN */}
-          <section id="confirmacion" className="seccion ConfirmSection">
+          <section id="confirmacion" className="Section ConfirmSection">
             <h2 className="TitleSection">CONFIRMACIÓN</h2>
             <ConfirmForm></ConfirmForm>
           </section>
 
           {/* SECCIÓN: REGALO */}
-          <section id="regalo" className="seccion">
+          <section id="regalo" className="Section GiftSection">
             <h2 className="TitleSection">REGALO</h2>
             <Gift/>
           </section>
 
           {/* SECCIÓN: GRACIAS */}
-          <section id="gracias" className="Header">
+          <section id="gracias" className="HeaderSection HeaderThanksSection">
             <HeaderThanks/>
           </section>
 
