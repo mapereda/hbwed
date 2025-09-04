@@ -15,5 +15,5 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
   },
-  base: '/mi-web/', // <- Aquí pones el nombre de tu repo o subpath
+  base: '/',
 })
