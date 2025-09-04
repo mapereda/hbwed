@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IonInput, IonButton, IonItem, IonLabel, IonSelect, IonSelectOption, IonRadioGroup, IonRadio, IonTextarea } from "@ionic/react";
+import { IonInput, IonButton, IonItem, IonLabel, IonSelect, IonSelectOption, IonRadioGroup, IonRadio, IonTextarea, IonToast, IonLoading } from "@ionic/react";
 import emailjs from "emailjs-com";
 import "./confirmForm.css";
 
@@ -11,6 +11,10 @@ const ConfirmForm: React.FC = () => {
     usaTransporte: "",
     bus: ""
   });
+
+  const [toastMessage, setToastMessage] = useState("");
+  const [showToast, setShowToast] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const busOptions = [
     { value: "madrid", label: "Cuatro Caminos, Madrid" },
@@ -28,23 +32,32 @@ const ConfirmForm: React.FC = () => {
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log("Datos del formulario:", formData);
+    setLoading(true);
 
     emailjs
       .send(
-        "service_t5uztoq",    // <--- cámbialo
-        "template_it54idq",   // <--- cámbialo
+        "service_t5uztoq",
+        "template_it54idq",
         formData,
-        "ti8wyB4s-TJNWLkkx"     // <--- cámbialo
+        "ti8wyB4s-TJNWLkkx"
       )
       .then(
         (result) => {
-          console.log(result.text);
-          alert("¡Mensaje enviado con éxito!");
+          setLoading(false);
+          setToastMessage("¡Confirmación enviada con éxito! ¡Mil gracias por acompañarnosen este día tan especial!");
+          setShowToast(true);
+          setFormData({
+            name: "",
+            companionName: "",
+            allergy: "",
+            usaTransporte: "",
+            bus: ""
+          });
         },
         (error) => {
-          console.log(error.text);
-          alert("Hubo un error, inténtalo de nuevo.");
+          setLoading(false);
+          setToastMessage("Upss.. Algo ha ido mal al enviar la confirmación. Por favor, inténtalo de nuevo.");
+          setShowToast(true);
         }
       );
   };
@@ -117,9 +130,24 @@ const ConfirmForm: React.FC = () => {
             </IonItem>
           )}
 
-          <IonButton color={"dark"} expand="block" type="submit" className="ConfirmButton">
+          <IonButton color={"dark"} expand="block" type="submit" className="ConfirmButton" disabled={loading}>
             Confirmar
           </IonButton>
+
+          {/* Toast */}
+          <IonToast
+            isOpen={showToast}
+            onDidDismiss={() => setShowToast(false)}
+            message={toastMessage}
+            duration={3000}
+            color={"dark"}
+          />
+
+          {/* Loading */}
+          <IonLoading
+            isOpen={loading}
+            message={"Enviando confirmación..."}
+          />
         </form>
   );
 };
