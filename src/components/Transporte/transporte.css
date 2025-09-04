@@ -9,3 +9,17 @@
     background-position-x: center;
     background-position-y: bottom;
 }
+
+@media (min-width: 768px) {
+  .Transporte{
+    background-size: 48% auto;
+    }
+}
+
+@media (min-width: 1200px) {
+  .Transporte{
+    width: 70%;
+    margin: 0 auto;
+    background-size: 20% auto;
+  }
+}

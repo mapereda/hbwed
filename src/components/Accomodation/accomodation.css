@@ -13,3 +13,30 @@
 .Accomodation .HotelButton{
     margin-top: 3rem;
 }
+
+
+@media (min-width: 768px) {
+    .Accomodation{
+        width: 70%;
+        margin: 0 auto;
+        background-size: 64% auto;
+    }
+
+    p {
+        text-align: center;
+    }
+    
+    .HotelButton{
+        width: 52%;
+        margin: 0 auto;
+        margin-top: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+  .Accomodation{
+        width: 50%;
+        margin: 0 auto;
+        background-size: 44% auto;
+    }
+}

@@ -19,7 +19,6 @@
   font-style: normal;
 }
 
-
 /* Fondo “papel” – usa tu propia textura: /assets/paper-texture.jpg */
 .paper {
   --padding-start: 0;
@@ -29,6 +28,38 @@
   --background: url(/public/assets/fondoTextura.jpg);
   background-size: cover;
   background-attachment: fixed;
+}
+
+.texto, p, span {
+  margin: .2rem;
+  font-family: "Cormorant";
+  font-size: 1.2rem;
+  color: var(--ion-color-dark); 
+  text-align: left; 
+}
+
+.Label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.InfoText {
+  margin: 0 auto;
+  color: var(--ion-color-medium-shade);
+  font-family: "Cormorant";
+  text-align: center;
+  font-size: .9rem;
+}
+
+h3, h5, ion-button {
+  font-family: "Cormorant";
+  color: var(--ion-color-dark);
+}
+
+h5 {
+  margin-top: 1.4rem;
+  margin-bottom: .2rem;
+  font-weight: 600;
 }
 
 /* Portada */
@@ -47,6 +78,7 @@
 
 .CoverSection p {
   margin: 1rem 0;
+  text-align: center;
 }
 
 .Logo {
@@ -114,37 +146,6 @@
   font-weight: 500;
 }
 
-.texto, p, span {
-  margin: .2rem;
-  font-family: "Cormorant";
-  font-size: 1.2rem;
-  color: var(--ion-color-dark);  
-}
-
-.Label {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.InfoText {
-  margin: 0 auto;
-  color: var(--ion-color-medium-shade);
-  font-family: "Cormorant";
-  text-align: center;
-  font-size: .9rem;
-}
-
-h3, h5, ion-button {
-  font-family: "Cormorant";
-  color: var(--ion-color-dark);
-}
-
-h5 {
-  margin-top: 1.4rem;
-  margin-bottom: .2rem;
-  font-weight: 600;
-}
-
 /* FAB “arriba” */
 .fab {
   --background: var(--ion-color-secondary);
@@ -164,4 +165,18 @@ h5 {
 
 .AccommodationSection {
   border-top: 1px solid var(--ion-color-secondary);
+}
+
+@media (min-width: 768px) {
+  .Logo {
+    width: 46%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Logo {
+    width: 20%;
+    height: auto;
+  }
 }

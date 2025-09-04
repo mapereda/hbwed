@@ -41,3 +41,16 @@
   --box-shadow: 0 4px 20px -4px hsl(var(--ion-color-primary-rgb) / 0.4);
   font-weight: 400;
 }
+
+@media (min-width: 768px) {
+  .ConfirmForm {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ConfirmForm {
+    width: 50%;
+  }
+}

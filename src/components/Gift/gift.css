@@ -61,3 +61,19 @@
 .PhoneName {
     font-weight: bold;
 }
+
+@media (min-width: 768px) {
+    .Gift {
+        width: 70% !important;
+        margin: 0 auto;
+        background-size: 48% auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .Gift {
+        width: 50% !important;
+        margin:0 auto;
+        background-size: 32% auto;
+    }
+}
