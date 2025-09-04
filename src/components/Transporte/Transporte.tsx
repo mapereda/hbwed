@@ -27,9 +27,9 @@ const Transporte = () => {
                 23:00h Moncloa - El Casar - Valdenuño Fernández.
                 <br />
             </p>
-
-            <h5>TAXIS EL ESCORIAL</h5>
-            <p className="texto">Lorem ipsum...</p>
+            {/* //TODO */}
+            {/* <h5>TAXIS EL ESCORIAL</h5>
+            <p className="texto">Lorem ipsum...</p> */}
         </div>
     </div>
   );
