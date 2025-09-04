@@ -20,13 +20,22 @@
 .Gift .BankContent .Label {
     margin-bottom: .4rem;
 }
-.Gift .BankContent .BankAccount {
-    width: 100%;
-  font-size: 1rem;
-  padding: 1rem;
-  border-radius: 12px;
-  background: rgba(var(--ion-color-secondary-rgb), .4);
-  text-align: center;
+
+.Gift .BankContent .BankAccountContent {
+      width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: .6rem .4rem;
+    padding-left: .8rem;
+    border-radius: 12px;
+    background: rgba(var(--ion-color-secondary-rgb), .4);
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.BankAccountContent .BankAccount{
+  font-size: .9rem;
 }
 
 .PhonesContent {
