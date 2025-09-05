@@ -1,0 +1,16 @@
+.HeaderCita {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeaderCita .CitaText {
+    padding: 1rem 0;
+    font-size: 2rem;
+    font-family: "High Spirited";
+    text-align: center;       
+}

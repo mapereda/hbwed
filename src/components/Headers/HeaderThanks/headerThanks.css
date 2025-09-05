@@ -1,0 +1,51 @@
+.HeaderThanks {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeaderThanks .Cita {
+    width: 100%;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    background-image: url(/assets/Mesa.png);
+    background-repeat: no-repeat;
+    background-size: 54% auto;
+    background-position-x: right;
+    background-position-y: bottom;
+}
+
+.HeaderThanks .Cita .CitaText {
+    padding: .4rem 0;
+    margin-right: 10%;
+    font-size: 1.8rem;
+    font-family: "High Spirited";
+    text-align: left;
+    color: var(--ion-color-dark-contrast);
+}
+
+
+@media (min-width: 768px) {
+    .Cita{
+        background-size: 32% auto !important;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .Cita{
+        padding-left: 10vw;
+        min-height: 36vh;
+        background-size: 16% auto !important;
+    }
+}
